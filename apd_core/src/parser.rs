@@ -34,7 +34,8 @@ fn get_branch_packages_data(repo: &str) -> Option<String> {
 }
 
 #[allow(dead_code)]
-pub fn get_branch_packages(repo: &str) -> Option<HashMap<String, Vec<String>>> {
+#[no_mangle]
+pub extern "C" fn get_branch_packages(repo: &str) -> Option<HashMap<String, Vec<String>>> {
     let response_data = match get_branch_packages_data(&repo) {
         Some(response_data) => response_data,
         None => return None,

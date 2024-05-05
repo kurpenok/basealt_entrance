@@ -3,6 +3,9 @@ name = "apd_core"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
 reqwest = { version = "0.12.4", features = ["blocking"] }
 serde = { version = "1.0.200", features = ["derive"] }

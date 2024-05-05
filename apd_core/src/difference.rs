@@ -3,7 +3,8 @@ use std::collections::HashSet;
 use crate::structures::PackagesDifference;
 
 #[allow(dead_code)]
-pub fn get_packages_difference(
+#[no_mangle]
+pub extern "C" fn get_packages_difference(
     packages_1: Vec<String>,
     packages_2: Vec<String>,
 ) -> PackagesDifference {
